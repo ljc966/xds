@@ -1,14 +1,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>��cxk</title>
+<title>打cxk</title>
 
 <style type="text/css">
 img{cursor:url('images/mouse.ani');}
 </style>
-<!--��Դ�������ǵĻ�����-->
+<!--此源码由星星的煌制作-->
 	
-  <!--���������Ŷ���ϵ���QQ:2904958418 -->
+  <!--如果想加入团队联系这个QQ:2904958418 -->
 
 
 <script language="JavaScript">
@@ -46,7 +46,7 @@ function showTime(){
 	if(time<=0){
 		esc();
 	}
-	var str="���У�"+mouse+"ֻ  ©����"+(sum-mouse)+"ֻ"+"<br>"+" �ܷ֣�"+sum*100+"  �÷֣�"+(mouse*100-(sum-mouse)*100);
+	var str="打中："+mouse+"只  漏掉："+(sum-mouse)+"只"+"<br>"+" 总分："+sum*100+"  得分："+(mouse*100-(sum-mouse)*100);
 	document.getElementById("score").innerHTML=str;
 }
 function showImage(){  
@@ -96,11 +96,11 @@ function esc(){
 
 <table align="center">
 	<tr>
-		<td><font color="#0066FF">��Ϸ˵��:</font></td>
+		<td><font color="#0066FF">游戏说明:</font></td>
 	</tr>
 	<tr>
 		<td>
-			<font color="#0066FF">�������ʼ��Ϸ����ť������ͼ�������������ʧǰ�������л���<br>����һ�μ��ɻ��100�Ļ��֣�û�д��У���ȡ100���֡�����ж��ɣ���������<br>��Ӧ��������</font>
+			<font color="#0066FF">点击“开始游戏”按钮，在下图中随机产生，消失前单击进行击打，<br>打中一次即可获得100的积分，没有打中，扣取100积分。快快行动吧，考验您的<br>反应和眼力！</font>
 		</td>
 	</tr>
 	<tr align="right">
@@ -116,28 +116,28 @@ function esc(){
 		<td>
 			<table cellspacing="3">
 				<tr>
-					<td>--��Ϸʱ��:--</td>
-					<td><input type="text" width="6" id="gameTime" value="1"/> ����</td>
+					<td>--游戏时间:--</td>
+					<td><input type="text" width="6" id="gameTime" value="1"/> 分钟</td>
 				</tr>
 				<tr>
-					<td>--����ʱ��:--</td>
+					<td>--倒计时间:--</td>
 					<td><div id="time"></div></td>
 				</tr>
 				<tr>
-					<td>--���ֵ�ʱ����:--</td>
-					<td><input type="text" width="6" id="spaceTime" value="1"/> ����</td>
+					<td>--出现的时间间隔:--</td>
+					<td><input type="text" width="6" id="spaceTime" value="1"/> 秒钟</td>
 				</tr>
 				<tr>
-					<td>--ͣ��ʱ��:--</td>
-					<td><input type="text" width="6" id="stayTime" value="1"/> ����</td>
+					<td>--停留时间:--</td>
+					<td><input type="text" width="6" id="stayTime" value="1"/> 秒钟</td>
 				</tr>
 				<tr>
-					<td>--�÷����:--</td>
+					<td>--得分情况:--</td>
 					<td><div id="score"></div></td>
 				</tr>
 				<tr align="center">
-					<td ><input type="button" value="��ʼ��Ϸ" id="button1" onclick="onGame()"/></td>
-					<td><input type="button" value="�˳���Ϸ" id="button2" disabled onclick="esc()"/></td>
+					<td ><input type="button" value="开始游戏" id="button1" onclick="onGame()"/></td>
+					<td><input type="button" value="退出游戏" id="button2" disabled onclick="esc()"/></td>
 				</tr>
 			</table>
 		</td>
@@ -191,4 +191,6 @@ Your browser does not support the audio element.
 </source></audio>
 </center>
 </bgsound></body>
+<head>
 </html>
+

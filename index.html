@@ -1,10 +1,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>打wyy</title>
+<title>打kunkun</title>
 
 <style type="text/css">
 img{cursor:url('images/mouse.ani');}
+/* 添加音效控制样式 */
+#soundControl {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffcc00;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+#soundControl i {
+  font-size: 24px;
+  color: #fff;
+}
 </style>
 <!--此源码由星星的煌制作-->
 	
@@ -18,6 +34,27 @@ var button1,button2;
 var time;
 var sum=0;
 var mouse=0;
+
+// 添加音效变量
+var hitSound = new Audio();
+hitSound.src = "https://assets.mixkit.co/sfx/preview/mixkit-retro-game-emergency-alarm-1000.mp3";
+hitSound.volume = 0.7;
+
+// 添加音效控制
+var soundEnabled = true;
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  var soundIcon = document.getElementById("soundIcon");
+  if (soundEnabled) {
+    soundIcon.className = "fas fa-volume-up";
+    hitSound.volume = 0.7;
+  } else {
+    soundIcon.className = "fas fa-volume-mute";
+    hitSound.volume = 0;
+  }
+}
+
 function onGame(){
 	init();
 	no1=window.setInterval("showTime()",1000);	
@@ -71,6 +108,13 @@ function clickMouse(o){
 	  if(str=="01.jpg"){
 	   o.src="images/02.jpg";
 	   mouse+=1;
+	   
+	   // 添加打击音效 - 修改位置1
+	   if (soundEnabled) {
+	     hitSound.currentTime = 0;
+	     hitSound.play();
+	   }
+	   
 	   no4=setInterval("leaveImage(o)",500);
 	  }
 }
@@ -89,10 +133,17 @@ function esc(){
 	}
 }
 </script>
+<!-- 添加字体图标 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body >
 <bgsound  src="images/bgsound.mp3" loop="-1">
+
+<!-- 添加音效控制按钮 - 修改位置2 -->
+<div id="soundControl" onclick="toggleSound()">
+  <i id="soundIcon" class="fas fa-volume-up"></i>
+</div>
 
 <table align="center">
 	<tr>
@@ -100,7 +151,7 @@ function esc(){
 	</tr>
 	<tr>
 		<td>
-			<font color="#0066FF">点击“开始游戏”按钮，在下图中随机产生，消失前单击进行击打，<br>打中一次即可获得100的积分，没有打中，扣取100积分。快快行动吧，考验你的<br>反应和眼力！</font>
+			<font color="#0066FF">点击"开始游戏"按钮，在下图中随机产生，消失前单击进行击打，<br>打中一次即可获得100的积分，没有打中，扣取100积分。快快行动吧，考验你的<br>反应和眼力！</font>
 		</td>
 	</tr>
 	<tr align="right">
@@ -193,4 +244,3 @@ Your browser does not support the audio element.
 </bgsound></body>
 <head>
 </html>
-
